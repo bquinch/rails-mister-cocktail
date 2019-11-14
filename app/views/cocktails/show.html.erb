@@ -1,0 +1,31 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://source.unsplash.com/800x600/?cocktail<%= @cocktail.name %>');">
+  <div class="container">
+    <h1><strong><%= @cocktail.name %></strong></h1>
+  </div>
+</div>
+<div class="container">
+  <div class="cards cocktail my-3">
+    <div class="card-trip">
+      <div class="card-trip-infos">
+        <%= simple_form_for [@cocktail, @dose] do |f| %>
+          <%= f.label 'Add a new cocktail' %>
+          <%= f.input :description, collection: Dose::DESCRIPTIONS %>
+          <%= f.association :ingredient %>
+          <%= f.submit 'Add a dose', class: 'btn btn-success'%>
+        <% end %>
+      </div>
+    </div>
+    <div class="ingredients-card ">
+      <% @cocktail.doses.each do |dose| %>
+        <p>
+          <i class="far fa-circle"></i>
+          <%= dose.description %>
+          <%= dose.ingredient.name %>
+          <%= link_to cocktail_dose_path(@cocktail), method: :delete do %>
+            <i class="far fa-trash-alt"></i>
+          <% end %>
+        </p>
+      <% end %>
+    </div>
+  </div>
+</div>

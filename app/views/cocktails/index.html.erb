@@ -1,0 +1,30 @@
+<div class="mister-cocktail">
+  <div class="container">
+    <div class="cards">
+      <% @cocktails.each do |cocktail| %>
+        <div class="card-trip mt-5">
+          <%= link_to cocktail_path(cocktail) do %>
+            <%= image_tag "https://source.unsplash.com/300x200/?cocktail#{cocktail.name}", alt: "cocktail" %>
+            <%= link_to '❌', cocktail_path(cocktail), method: :delete, data: { confirm: 'Are you sure?' }, class: 'destroy-cross'  %>
+          <% end %>
+          <div class="card-trip-infos">
+            <h2><%= cocktail.name %></h2>
+            <% cocktail.doses.each do |dose| %>
+              <p><%= dose.description %> <%= dose.ingredient.name %></p>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+      <div class="card-trip">
+        <div class="card-trip-infos">
+          <%= simple_form_for @cocktail do |f| %>
+            <%= f.label 'Add a new cocktail' %>
+            <%= f.input :name %>
+            <%= f.submit %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

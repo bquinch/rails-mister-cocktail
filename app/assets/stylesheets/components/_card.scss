@@ -1,0 +1,75 @@
+.card-trip {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  position: relative;
+
+  .destroy-cross {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+  }
+
+  h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  p {
+    font-size: 12px;
+    opacity: .7;
+    margin: 0;
+  }
+
+  .card-trip-infos {
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    flex-direction: column;
+
+    .card-trip-user {
+      position: absolute;
+      right: 16px;
+      top: -20px;
+      width: 40px;
+    }
+  }
+}
+
+.card-trip > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 15px;
+
+  &.cocktail {
+    grid-template-columns: 1fr 1fr 2fr;
+  }
+}
+
+.ingredients-card {
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 10px;
+
+  p {
+    margin: 10px 0px;
+  }
+
+  i {
+    color: blue;
+  }
+
+  .fa-circle {
+    font-size: 7px
+  }
+}

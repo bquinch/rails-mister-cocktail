@@ -11,3 +11,10 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+.mister-cocktail {
+  background-image: url('https://mediaslide-europe.storage.googleapis.com/profil/news_pictures/2017/07/large-1499163582-45a9b4d3c9881622adfa59d85f81f713.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
