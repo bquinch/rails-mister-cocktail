@@ -1,4 +1,8 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://source.unsplash.com/800x600/?cocktail<%= @cocktail.name %>');">
+<% if !@cocktail.photo.attached? %>
+  <% @cocktail.photo.key = 'cocktail' %>
+<% end %>
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @cocktail.photo.key %>');">
   <div class="container">
     <h1><strong><%= @cocktail.name.capitalize %></strong></h1>
   </div>

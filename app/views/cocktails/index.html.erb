@@ -4,7 +4,7 @@
       <% @cocktails.each do |cocktail| %>
         <div class="card-trip mt-5">
           <%= link_to cocktail_path(cocktail) do %>
-            <%= image_tag "https://source.unsplash.com/300x200/?cocktail#{cocktail.name}", alt: "cocktail" %>
+            <%= cl_image_tag cocktail.photo.key, alt: "cocktail" %>
             <%= link_to '❌', cocktail_path(cocktail), method: :delete, data: { confirm: 'Are you sure?' }, class: 'destroy-cross'  %>
           <% end %>
           <div class="card-trip-infos">
@@ -20,6 +20,7 @@
           <%= simple_form_for @cocktail do |f| %>
             <%= f.label 'Add a new cocktail' %>
             <%= f.input :name %>
+            <%= f.input :photo, as: :file %>
             <%= f.submit %>
           <% end %>
         </div>
