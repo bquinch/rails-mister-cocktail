@@ -6,34 +6,54 @@
 
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path photo %>');">
   <div class="container">
-    <h1><strong><%= @cocktail.name.capitalize %></strong></h1>
-  </div>
-</div>
-<div class="container">
-  <div class="cards cocktail my-3">
-    <div class="card-trip">
-      <div class="card-trip-infos">
-        <%= simple_form_for [@cocktail, @dose] do |f| %>
-          <%= f.label 'Add a new cocktail' %>
-          <%= f.input :description, collection: Dose::DESCRIPTIONS %>
-          <%= f.association :ingredient %>
-          <%= f.submit 'Add a dose', class: 'btn btn-success'%>
+    <h1 class="text-center"><em><strong><%= @cocktail.name.capitalize %></strong></em></h1>
+    <div class="cards cocktail my-3">
+      <div class="card-trip ingredients">
+        <h2><em>Ingredients</em></h2>
+        <% @cocktail.doses.each do |dose| %>
+          <p>
+            <i class="far fa-circle"></i>
+            <%= dose.description %>
+            <%= dose.ingredient.name %>
+            <%= link_to dose_path(dose), method: :delete do %>
+              <i class="far fa-trash-alt"></i>
+            <% end %>
+          </p>
         <% end %>
       </div>
-    </div>
-    <div class="ingredients-card ">
-      <% @cocktail.doses.each do |dose| %>
-        <p>
-          <i class="far fa-circle"></i>
-          <%= dose.description %>
-          <%= dose.ingredient.name %>
-          <%= link_to dose_path(dose), method: :delete do %>
-            <i class="far fa-trash-alt"></i>
+      <div class="card-trip">
+        <div class="card-trip-infos">
+          <%= simple_form_for [@cocktail, @dose] do |f| %>
+            <%= f.label 'Add a new cocktail' %>
+            <%= f.input :description, collection: Dose::DESCRIPTIONS %>
+            <%= f.association :ingredient, input_html: { class: 'select2' } %>
+            <%= f.submit 'Add a dose', class: 'btn btn-success'%>
           <% end %>
-        </p>
-      <% end %>
-    </div>
-  </div>
+        </div>
+      </div>
+      <div class="reviews">
+        <% @cocktail.reviews.each do |review| %>
+          <div class="card-trip review">
+            <div class="card-trip-infos">
+                <h2 class='border-bottom'><%= review.id %></h2>
+                <%= review.content %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <div class="card-trip review">
+        <div class="card-trip-infos">
+          <%= simple_form_for [@cocktail, @review] do |f| %>
+            <%= f.label 'Add a review' %>
+            <%= f.input :content %>
+            <%= f.submit class: 'btn btn-success' %>
+          <% end %>
+        </div>
+      </div>
 
-  <%= link_to 'Back to cocktails', cocktails_path %>
+      </div>
+    <%= link_to 'Back to cocktails', cocktails_path, class: 'back_to_cocktails' %>
+  </div>
+</div>
+
 </div>

@@ -1,5 +1,6 @@
 <div class="mister-cocktail">
   <div class="container">
+    <h2 class="titre-cocktail">Sans alcool... la fête est plus folle !</h2>
     <div class="cards">
       <% @cocktails.each do |cocktail| %>
         <div class="card-trip mt-5">
@@ -9,7 +10,7 @@
             <% else %>
               <%= image_tag "https://res.cloudinary.com/diicv9vju/image/upload/v1573815678/cocktail.jpg", alt: "alttext" %>
             <% end %>
-            <%= link_to '❌', cocktail_path(cocktail), method: :delete, data: { confirm: 'Are you sure?' }, class: 'destroy-cross'  %>
+            <%= link_to 'x', cocktail_path(cocktail), method: :delete, data: { confirm: 'Are you sure?' }, class: 'destroy-cross'  %>
           <% end %>
           <div class="card-trip-infos">
             <h2><%= cocktail.name %></h2>
@@ -19,13 +20,13 @@
           </div>
         </div>
       <% end %>
-      <div class="card-trip">
+      <div class="card-trip mt-5">
         <div class="card-trip-infos">
           <%= simple_form_for @cocktail do |f| %>
             <%= f.label 'Add a new cocktail' %>
             <%= f.input :name %>
-            <%= f.input :photo, as: :file %>
-            <%= f.submit %>
+            <%= f.input :photo, as: :file, input_html: { class: 'hidden' }, label_html: { class: 'btn btn-success'}, label: '📷 Upload a photo' %>
+            <%= f.submit class: 'btn btn-success' %>
           <% end %>
         </div>
       </div>

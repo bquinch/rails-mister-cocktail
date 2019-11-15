@@ -13,8 +13,38 @@
 @import "pages/index";
 
 .mister-cocktail {
-  background-image: url('https://mediaslide-europe.storage.googleapis.com/profil/news_pictures/2017/07/large-1499163582-45a9b4d3c9881622adfa59d85f81f713.jpg');
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://mediaslide-europe.storage.googleapis.com/profil/news_pictures/2017/07/large-1499163582-45a9b4d3c9881622adfa59d85f81f713.jpg');
   background-size: cover;
   background-position: center;
+  overflow: scroll;
   height: 100vh;
+}
+
+.titre-cocktail {
+  font-size: 2rem;
+  margin-top: 50px;
+  color: white;
+  font-style: italic;
+  text-align: center;
+}
+
+.back_to_cocktails {
+  color: white;
+  text-decoration: none;
+  background-color: transparent;
+  padding: 6px;
+  border: 1px solid white;
+  border-radius: 3px;
+  transition: all 0.3s;
+
+  &:hover {
+    text-decoration: none;
+    color: black;
+    background-color: white;
+
+  }
+}
+
+.hidden {
+  visibility: hidden;
 }
