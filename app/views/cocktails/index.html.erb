@@ -4,7 +4,11 @@
       <% @cocktails.each do |cocktail| %>
         <div class="card-trip mt-5">
           <%= link_to cocktail_path(cocktail) do %>
-            <%= cl_image_tag cocktail.photo.key, alt: "cocktail" %>
+            <% if cocktail.photo.attached? %>
+              <%= cl_image_tag cocktail.photo.key, alt: "cocktail" %>
+            <% else %>
+              <%= image_tag "https://res.cloudinary.com/diicv9vju/image/upload/v1573815678/cocktail.jpg", alt: "alttext" %>
+            <% end %>
             <%= link_to '❌', cocktail_path(cocktail), method: :delete, data: { confirm: 'Are you sure?' }, class: 'destroy-cross'  %>
           <% end %>
           <div class="card-trip-infos">

@@ -1,8 +1,10 @@
-<% if !@cocktail.photo.attached? %>
-  <% @cocktail.photo.key = 'cocktail' %>
+<% if @cocktail.photo.attached? %>
+  <% photo = @cocktail.photo.key %>
+<% else %>
+  <% photo = 'https://res.cloudinary.com/diicv9vju/image/upload/v1573815678/cocktail.jpg' %>
 <% end %>
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @cocktail.photo.key %>');">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path photo %>');">
   <div class="container">
     <h1><strong><%= @cocktail.name.capitalize %></strong></h1>
   </div>
