@@ -52,11 +52,13 @@
         <% end %>
         <div class="card-trip review hidden" id="add-review">
           <div class="card-trip-infos">
-            <%= simple_form_for [@cocktail, @review] do |f| %>
-              <%= f.label 'Add a review' %>
-              <%= f.input :author %>
-              <%= f.input :content, as: :text, class: 'content-area' %>
-              <%= f.submit class: 'btn btn-warning' %>
+            <% if @cocktail.reviews %>
+              <%= simple_form_for [@cocktail, @review] do |f| %>
+                <%= f.label 'Add a review' %>
+                <%= f.input :author %>
+                <%= f.input :content, as: :text, class: 'content-area' %>
+                <%= f.submit class: 'btn btn-warning' %>
+              <% end %>
             <% end %>
           </div>
           <div class="close-table-review">
