@@ -25,8 +25,8 @@
           <%= simple_form_for @cocktail do |f| %>
             <%= f.label 'Add a new cocktail' %>
             <%= f.input :name %>
-            <%= f.input :photo, as: :file, input_html: { class: 'hidden' }, label_html: { class: 'btn btn-success'}, label: '📷 Upload a photo' %>
-            <%= f.submit class: 'btn btn-success' %>
+            <%= f.input :photo, as: :file, input_html: { class: 'hidden' }, label_html: { class: 'btn btn-warning'}, label: '📷 Upload a photo' %>
+            <%= f.submit class: 'btn btn-warning' %>
           <% end %>
         </div>
       </div>

@@ -14,7 +14,7 @@
 
 .mister-cocktail {
   background: rgb(157,216,200);
-  background: linear-gradient(180deg, rgba(157,216,200,1) 0%, rgba(157,216,200,1) 9%, rgba(216,244,236,1) 100%);
+  background: linear-gradient(180deg, rgba(157,216,200,1) 0%, rgba(157,216,200,0.788953081232493) 9%, rgba(216,244,236,1) 100%);
   overflow: scroll;
   height: 100vh;
 }
@@ -30,11 +30,11 @@
 }
 
 .back_to_cocktails {
-  color: $green;
+  color: $orange;
   text-decoration: none;
   background-color: transparent;
   padding: 6px;
-  border: 1px solid white;
+  border: 1px solid #FFFFFF80;
   border-radius: 3px;
   transition: all 0.3s;
   display: flex;
@@ -43,7 +43,7 @@
   &:hover {
     text-decoration: none;
     color: black;
-    background-color: $green;
+    background-color: $orange;
 
   }
 }

@@ -29,7 +29,7 @@
             <%= simple_form_for [@cocktail, @dose] do |f| %>
               <%= f.input :description, collection: Dose::DESCRIPTIONS %>
               <%= f.association :ingredient, input_html: { class: 'select2' } %>
-              <%= f.submit 'Add a dose', class: 'btn btn-success'%>
+              <%= f.submit 'Add a dose', class: 'btn btn-warning'%>
             <% end %>
           </div>
         </div>
@@ -49,7 +49,7 @@
               <%= f.label 'Add a review' %>
               <%= f.input :author %>
               <%= f.input :content, as: :text, class: 'content-area' %>
-              <%= f.submit class: 'btn btn-success' %>
+              <%= f.submit class: 'btn btn-warning' %>
             <% end %>
           </div>
         </div>
