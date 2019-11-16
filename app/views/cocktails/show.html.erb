@@ -12,7 +12,7 @@
           <% end %>
         </div>
         <div class="card-trip ingredients">
-          <% if Dose.all.empty? %>
+          <% if @cocktail.doses.empty? %>
             <h2><em>You have no ingredients</em></h2>
           <% else %>
             <h2><em>Ingredients</em></h2>
