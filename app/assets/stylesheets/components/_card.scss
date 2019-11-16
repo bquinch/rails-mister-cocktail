@@ -14,9 +14,10 @@
 
   .destroy-cross {
     position: absolute;
-    top: 0;
+    top: 0px;
     right: 5px;
-    color: red;
+    color: $orange;
+    font-weight: bolder;
   }
 
   &.image {

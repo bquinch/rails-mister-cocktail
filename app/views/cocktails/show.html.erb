@@ -45,8 +45,19 @@
         <% @cocktail.reviews.each do |review| %>
           <div class="card-trip review">
             <div class="card-trip-infos">
-                <h2 class='border-bottom'><%= review.author %></h2>
-                <%= review.content %>
+              <h2 class='border-bottom'><%= review.author %></h2>
+              <%= review.content %>
+              <div class="stars-inline">
+                <% if review.rating != nil %>
+                  <% review.rating.times do %>
+                    <i class="fas fa-star"></i>
+                  <% end %>
+                  <% (Review::RATINGS.length - review.rating - 1).times do %>
+                    <i class="far fa-star"></i>
+                  <% end %>
+                <% end %>
+              </div>
+              <%= link_to 'x', review_path(review), method: :delete, data: { confirm: 'Are you sure?' }, class: 'destroy-cross'  %>
             </div>
           </div>
         <% end %>
@@ -57,6 +68,12 @@
                 <%= f.label 'Add a review' %>
                 <%= f.input :author %>
                 <%= f.input :content, as: :text, class: 'content-area' %>
+                <%= f.label 'Rating' %>
+                <%= f.collection_radio_buttons :rating, [[1], [2], [3], [4], [5]], :first, :last do |b| %>
+                  <%= b.radio_button + b.label {''} %>
+                <% end %>
+                <br>
+                <br>
                 <%= f.submit class: 'btn btn-warning' %>
               <% end %>
             <% end %>
