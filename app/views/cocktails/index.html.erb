@@ -1,6 +1,8 @@
 <div class="mister-cocktail">
   <div class="container">
-    <h2 class="titre-cocktail">Monsieur Cocktail</h2>
+    <%= link_to root_url do %>
+      <h2 class="titre-cocktail">Monsieur Cocktail</h2>
+    <% end %>
     <div class="cards">
       <% @cocktails.each do |cocktail| %>
         <div class="card-trip">
