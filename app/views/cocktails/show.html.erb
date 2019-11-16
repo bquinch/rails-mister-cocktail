@@ -1,42 +1,44 @@
-<% if @cocktail.photo.attached? %>
-  <% photo = @cocktail.photo.key %>
-<% else %>
-  <% photo = 'https://res.cloudinary.com/diicv9vju/image/upload/v1573815678/cocktail.jpg' %>
-<% end %>
-
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path photo %>);">
+<div class="banner">
   <div class="container">
     <h1 class="text-center"><em><strong><%= @cocktail.name.capitalize %></strong></em></h1>
-    <%= link_to 'Back to cocktails', cocktails_path, class: 'back_to_cocktails text-center' %>
+
     <div class="cards cocktail my-3">
-      <div class="card-trip ingredients">
-        <h2><em>Ingredients</em></h2>
-        <% @cocktail.doses.each do |dose| %>
-          <p>
-          <i class="far fa-circle"></i>
-          <%= dose.description %>
-          <%= dose.ingredient.name %>
-          <%= link_to dose_path(dose), method: :delete do %>
-            <i class="far fa-trash-alt"></i>
+      <div class="cocktail-infos">
+        <div class="card-trip image">
+          <% if @cocktail.photo.attached? %>
+            <%= cl_image_tag @cocktail.photo.key, alt: "cocktail" %>
+          <% else %>
+            <%= image_tag "https://res.cloudinary.com/diicv9vju/image/upload/v1573815678/cocktail.jpg", alt: "alttext" %>
           <% end %>
-          </p>
-        <% end %>
-      </div>
-      <div class="card-trip">
-        <div class="card-trip-infos">
-          <%= simple_form_for [@cocktail, @dose] do |f| %>
-            <%= f.label 'Add a new cocktail' %>
-            <%= f.input :description, collection: Dose::DESCRIPTIONS %>
-            <%= f.association :ingredient, input_html: { class: 'select2' } %>
-            <%= f.submit 'Add a dose', class: 'btn btn-success'%>
+        </div>
+        <div class="card-trip ingredients">
+          <h2><em>Ingredients</em></h2>
+          <% @cocktail.doses.each do |dose| %>
+            <p>
+            <i class="far fa-circle"></i>
+            <%= dose.description %>
+            <%= dose.ingredient.name %>
+            <%= link_to dose_path(dose), method: :delete do %>
+              <i class="far fa-trash-alt"></i>
+            <% end %>
+            </p>
           <% end %>
+        </div>
+        <div class="card-trip add-ingredients">
+          <div class="card-trip-infos">
+            <%= simple_form_for [@cocktail, @dose] do |f| %>
+              <%= f.input :description, collection: Dose::DESCRIPTIONS %>
+              <%= f.association :ingredient, input_html: { class: 'select2' } %>
+              <%= f.submit 'Add a dose', class: 'btn btn-success'%>
+            <% end %>
+          </div>
         </div>
       </div>
       <div class="reviews">
         <% @cocktail.reviews.each do |review| %>
           <div class="card-trip review">
             <div class="card-trip-infos">
-                <h2 class='border-bottom'><%= review.id %></h2>
+                <h2 class='border-bottom'><%= review.author %></h2>
                 <%= review.content %>
             </div>
           </div>
@@ -45,13 +47,15 @@
           <div class="card-trip-infos">
             <%= simple_form_for [@cocktail, @review] do |f| %>
               <%= f.label 'Add a review' %>
-              <%= f.input :content %>
+              <%= f.input :author %>
+              <%= f.input :content, as: :text, class: 'content-area' %>
               <%= f.submit class: 'btn btn-success' %>
             <% end %>
           </div>
         </div>
       </div>
     </div>
+  <%= link_to 'Back to cocktails', cocktails_path, class: 'back_to_cocktails' %>
   </div>
 </div>
 

@@ -1,22 +1,22 @@
 .banner {
-  background-size: cover;
-  background-position: center;
-  padding: 150px 0;
+  background: rgb(157,216,200);
+  background: linear-gradient(180deg, rgba(157,216,200,1) 0%, rgba(157,216,200,1) 9%, rgba(216,244,236,1) 100%);
+  padding: 1rem;
   height: 100vh;
   overflow: scroll;
+
+  h1 {
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+    font-size: 70px;
+    border-bottom: 1px solid;
+  }
+
+  p {
+    font-size: 20px;
+    color: white;
+  }
 }
 
-.banner h1 {
-  margin: 0;
-  color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
-  font-weight: bold;
-}
 
-.banner p {
-  font-size: 20px;
-  color: white;
-  opacity: .7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-}

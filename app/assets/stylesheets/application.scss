@@ -13,9 +13,8 @@
 @import "pages/index";
 
 .mister-cocktail {
-  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://mediaslide-europe.storage.googleapis.com/profil/news_pictures/2017/07/large-1499163582-45a9b4d3c9881622adfa59d85f81f713.jpg');
-  background-size: cover;
-  background-position: center;
+  background: rgb(157,216,200);
+  background: linear-gradient(180deg, rgba(157,216,200,1) 0%, rgba(157,216,200,1) 9%, rgba(216,244,236,1) 100%);
   overflow: scroll;
   height: 100vh;
 }
@@ -26,25 +25,29 @@
   color: white;
   font-style: italic;
   text-align: center;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #FFFFFF80;
 }
 
 .back_to_cocktails {
-  color: white;
+  color: $green;
   text-decoration: none;
   background-color: transparent;
   padding: 6px;
   border: 1px solid white;
   border-radius: 3px;
   transition: all 0.3s;
+  display: flex;
+  justify-content: center;
 
   &:hover {
     text-decoration: none;
     color: black;
-    background-color: white;
+    background-color: $green;
 
   }
 }
 
 .hidden {
-  visibility: hidden;
+  display: none;
 }
