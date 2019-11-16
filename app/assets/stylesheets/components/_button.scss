@@ -1,0 +1,54 @@
+.toggle-button {
+  color: $orange;
+  text-decoration: none;
+  background-color: transparent;
+  padding: 6px;
+  border: 1px solid #FFFFFF80;
+  border-radius: 3px;
+  transition: all 0.3s;
+  display: flex;
+  justify-content: center;
+
+  &:hover {
+    text-decoration: none;
+    color: black;
+    background-color: $orange;
+
+  }
+}
+
+#add-ingredient-btn,
+#add-cocktail-btn,
+#add-review-btn {
+  opacity: 1;
+  transition: all 0.5s;
+}
+
+#add-ingredient-btn {
+  width: 400px;
+  margin: 0rem 1rem 1rem 0rem;
+}
+
+#add-cocktail-btn {
+  height: 2.4rem;
+}
+
+.btn-warning {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.close-table,
+.close-table-review,
+.close-table-ingredient {
+  color: #f0959568;
+  margin-top: 0.5em;
+  font-size: 0.7em;
+  transition: all 0.2s;
+
+  &:hover {
+    cursor: pointer;
+    color: $orange;
+  }
+}

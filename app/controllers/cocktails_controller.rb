@@ -20,7 +20,7 @@ class CocktailsController < ApplicationController
     if @cocktail.save
       redirect_to cocktail_path(@cocktail)
     else
-      render :index
+      render :index, alert: "You cocktail isn't complete !"
     end
   end
 

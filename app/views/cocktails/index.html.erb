@@ -20,15 +20,20 @@
           </div>
         </div>
       <% end %>
-      <div class="card-trip add-cocktail">
+      <div class="card-trip add-cocktail hidden">
         <div class="card-trip-infos">
           <%= simple_form_for @cocktail do |f| %>
-            <%= f.label 'Add a new cocktail' %>
             <%= f.input :name %>
-            <%= f.input :photo, as: :file, input_html: { class: 'hidden' }, label_html: { class: 'btn btn-warning'}, label: '📷 Upload a photo' %>
+            <%= f.input :photo, as: :file, input_html: { class: 'hidden' }, label_html: { class: 'toggle-button'}, label: '📷 Upload a photo' %>
             <%= f.submit class: 'btn btn-warning' %>
           <% end %>
+          <div class="close-table">
+            <em>close</em>
+          </div>
         </div>
+      </div>
+      <div class="btn btn-warning" id="add-cocktail-btn">
+        Add a cocktail
       </div>
     </div>
   </div>

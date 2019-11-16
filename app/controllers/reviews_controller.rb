@@ -1,6 +1,7 @@
 class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
+    @dose = Dose.new
     @cocktail = Cocktail.find(params[:cocktail_id])
     @review.cocktail = @cocktail
     if @review.save
@@ -13,6 +14,6 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require('review').permit(:content, :author, :cocktail_id)
+    params.require('review').permit(:content, :author)
   end
 end

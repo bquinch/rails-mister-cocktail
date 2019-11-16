@@ -20,7 +20,7 @@
 }
 
 .titre-cocktail {
-  font-size: 2rem;
+  font-size: 4rem;
   margin-top: 50px;
   color: white;
   font-style: italic;
@@ -29,25 +29,10 @@
   border-bottom: 1px solid #FFFFFF80;
 }
 
-.back_to_cocktails {
-  color: $orange;
-  text-decoration: none;
-  background-color: transparent;
-  padding: 6px;
-  border: 1px solid #FFFFFF80;
-  border-radius: 3px;
-  transition: all 0.3s;
-  display: flex;
-  justify-content: center;
-
-  &:hover {
-    text-decoration: none;
-    color: black;
-    background-color: $orange;
-
-  }
-}
-
 .hidden {
   display: none;
+}
+
+.container {
+  margin-bottom: 1rem;
 }

@@ -29,7 +29,6 @@
     width: 400px;
     margin: 0rem 1rem 1rem 0rem;
 
-
     p {
       font-size: 14px;
       text-align: center;
@@ -88,6 +87,18 @@
   }
 }
 
+#ingredient-line {
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 23%;
+  align-items: center;
+  left: 50%;
+
+  .fa-glass-whiskey {
+    font-size: 0.7rem
+  }
+}
+
 .card-trip img {
   height: 200px;
   width: 100%;
@@ -119,7 +130,8 @@
 
 .simple_form.new_review,
 .simple_form.new_cocktail,
-.simple_form.new_dose {
+.simple_form.new_dose,
+#add-review-btn {
   width: -webkit-fill-available;
 }
 
@@ -133,7 +145,8 @@
       flex-direction: column;
       align-items: center;
 
-      .card-trip {
+      .card-trip,
+      #add-ingredient-btn {
         margin: 0rem 0rem 1rem 0rem;
       }
     }
@@ -153,7 +166,8 @@
       flex-direction: column;
       align-items: center;
 
-      .card-trip {
+      .card-trip,
+      #add-ingredient-btn {
         margin: 0rem 0rem 1rem 0rem;
       }
     }
