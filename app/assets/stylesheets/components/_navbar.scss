@@ -20,3 +20,15 @@
 .navbar {
   padding: 1rem 0rem 0rem 0rem;
 }
+
+.navbar-column {
+  width: 350px !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+}
+
+.navbar-column .search-bar.align-items-center {
+  margin-bottom: 1rem;
+}

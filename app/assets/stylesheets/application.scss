@@ -24,6 +24,7 @@
 }
 
 .titre-cocktail {
+  margin-top: 3rem;
   font-size: 4rem;
   color: white;
   opacity: 0.9;
@@ -46,26 +47,3 @@
   margin-bottom: 1rem;
 }
 
-.navbar-column {
-  width: 350px !important;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: auto;
-}
-
-.navbar-column .search-bar.align-items-center {
-  margin-bottom: 1rem;
-}
-
-.search-bar.align-items-center {
-  margin-bottom: 0rem;
-}
-
-.search-bar {
-
-  form {
-    display: flex;
-    margin-bottom: 1rem;
-  }
-}
