@@ -40,6 +40,7 @@
   &.ingredients {
     width: 400px;
     margin: 0rem 1rem 1rem 0rem;
+    padding: 0rem 1rem 1rem;
 
     p {
       font-size: 14px;
@@ -56,16 +57,16 @@
   &.instructions {
     width: 400px;
     margin: 0rem 1rem 1rem 0rem;
-    padding: 1rem;
+    padding: 0rem 1rem 1rem;
   }
 
   &.add-cocktail {
-    padding: 1rem;
+    padding: 0rem 1rem 1rem;
   }
 
   &.review {
     margin-bottom: 1rem;
-    padding: 1rem;
+    padding: 0rem 1rem 1rem;
   }
 
   h2 {
