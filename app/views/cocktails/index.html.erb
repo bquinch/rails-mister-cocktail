@@ -3,6 +3,16 @@
     <%= link_to root_url do %>
       <h2 class="titre-cocktail">Monsieur Cocktail</h2>
     <% end %>
+    <div class="search-bar">
+      <%= form_tag cocktails_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a cocktail"
+        %>
+        <%= submit_tag "Search", class: "btn btn-warning" %>
+      <% end %>
+    </div>
     <div class="cards">
       <% @cocktails.each do |cocktail| %>
         <div class="card-trip">
@@ -16,9 +26,6 @@
           <% end %>
           <div class="card-trip-infos">
             <h2><%= cocktail.name.split(' ').map { |x| x.capitalize }.join(' ') %></h2>
-            <% cocktail.doses.each do |dose| %>
-              <p><%= dose.description %> <%= dose.ingredient.name %></p>
-            <% end %>
           </div>
         </div>
       <% end %>

@@ -24,6 +24,13 @@
     width: 400px;
     margin: 0rem 1rem 1rem 0rem;
 
+    &:hover {
+      cursor: pointer;
+    }
+
+    .image-bigger {
+      height: 500px;
+    }
   }
 
   &.ingredients {
@@ -41,7 +48,8 @@
     }
   }
 
-  &.add-ingredients {
+  &.add-ingredients,
+  &.instructions {
     width: 400px;
     margin: 0rem 1rem 1rem 0rem;
     padding: 1rem;
@@ -105,6 +113,7 @@
   width: 100%;
   object-fit: cover;
   border-bottom: 1px solid #FFFFFF90;
+  transition: all 0.4s ease;
 }
 
 .cards {

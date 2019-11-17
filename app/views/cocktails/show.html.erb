@@ -1,15 +1,15 @@
+
 <div class="banner">
   <div class="container">
     <h1 class="text-center titre-cocktail"><em><strong><%= @cocktail.name.capitalize %></strong></em></h1>
-
     <div class="cards cocktail my-3">
       <div class="cocktail-infos">
         <div class="card-trip image">
-          <% if @cocktail.photo.attached? %>
-            <%= cl_image_tag @cocktail.photo.key, alt: "cocktail" %>
-          <% else %>
-            <%= image_tag "https://res.cloudinary.com/diicv9vju/image/upload/v1573815678/cocktail.jpg", alt: "alttext" %>
-          <% end %>
+          <%= cl_image_tag @cocktail.photo.key, class: 'image-thumbnail' %>
+        </div>
+        <div class="card-trip instructions">
+          <h2><em>Instructions</em></h2>
+          <%= @cocktail.instruction %>
         </div>
         <div class="card-trip ingredients">
           <% if @cocktail.doses.empty? %>
@@ -31,10 +31,9 @@
         <div class="card-trip add-ingredients hidden">
           <div class="card-trip-infos">
             <%= simple_form_for [@cocktail, @dose] do |f| %>
-              <%= f.input :description, collection: Dose::DESCRIPTIONS %>
+              <%= f.input :description %>
               <%= f.association :ingredient, input_html: { class: 'select2' } %>
               <%= f.submit 'Add a dose', class: 'btn btn-warning'%>
-
             <% end %>
           </div>
           <div class="close-table-ingredient">
@@ -89,10 +88,9 @@
           <div class="btn btn-warning" id="add-review-btn">
             Add a review
           </div>
+        </div>
       </div>
+      <%= link_to 'Back to cocktails', cocktails_path, class: 'toggle-button' %>
     </div>
-  <%= link_to 'Back to cocktails', cocktails_path, class: 'toggle-button' %>
   </div>
-</div>
-
 </div>

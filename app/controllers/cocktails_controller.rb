@@ -4,8 +4,12 @@ class CocktailsController < ApplicationController
   end
 
   def index
-    @cocktails = Cocktail.all
     @cocktail = Cocktail.new
+    if params[:query].present?
+      @cocktails = Cocktail.where("name ILIKE ?", "%#{params[:query]}%")
+    else
+      @cocktails = Cocktail.all
+    end
   end
 
   def show
@@ -35,7 +39,7 @@ class CocktailsController < ApplicationController
   private
 
   def cocktail_params
-    params.require('cocktail').permit(:name, :photo)
+    params.require('cocktail').permit(:name, :instruction, :photo)
   end
 
   def set_cocktail

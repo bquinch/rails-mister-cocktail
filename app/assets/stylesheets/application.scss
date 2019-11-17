@@ -27,6 +27,7 @@
   font-size: 4rem;
   margin-top: 50px;
   color: white;
+  opacity: 0.9;
   font-style: italic;
   text-align: center;
   padding-bottom: 8px;
@@ -39,4 +40,12 @@
 
 .container {
   margin-bottom: 1rem;
+}
+
+.search-bar {
+
+  form {
+    display: flex;
+    margin-bottom: 1rem;
+  }
 }
