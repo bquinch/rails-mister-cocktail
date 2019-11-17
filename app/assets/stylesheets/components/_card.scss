@@ -30,6 +30,10 @@
 
     .image-bigger {
       height: 500px;
+
+      &:hover {
+        cursor: zoom-out;
+      }
     }
   }
 
