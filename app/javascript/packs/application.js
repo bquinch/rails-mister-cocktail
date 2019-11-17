@@ -12,4 +12,5 @@ initSelect2();
 btn_cocktail_toggle();
 btn_ingredient_toggle();
 btn_review_toggle();
+make_bigger_image();
 navBarWhite();
