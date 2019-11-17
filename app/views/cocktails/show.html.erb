@@ -3,7 +3,7 @@
   <div class="container">
     <%= render 'navbar' %>
     <h1 class="text-center titre-cocktail"><em><strong><%= @cocktail.name.capitalize %></strong></em></h1>
-    <div class="cards cocktail my-3">
+    <div class="cards cocktail mt-3">
       <div class="cocktail-infos">
         <div class="card-trip image">
           <%= cl_image_tag @cocktail.photo.key, class: 'image-thumbnail' %>
