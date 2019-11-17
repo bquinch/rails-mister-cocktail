@@ -1,6 +1,6 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: transparent;
+.container.navbar-top {
+  padding: 0px;
+  margin: 0px;
 
   h2 {
     margin: 0px;
@@ -13,6 +13,10 @@
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.search-bar form {
+  margin-bottom: 0px !important;
+}
+
+.navbar {
+  padding: 1rem 0rem;
 }

@@ -1,7 +1,12 @@
-<div class="banner">
+<div class="banner homepage-about align-items-center">
   <div class="container">
-    <h1 class="text-center titre-cocktail">Bienvenue sur Monsieur Cocktail !</h1>
-    <p class="text-center">Here, you will know everything about the best cocktails in the world...</p>
-    <%= link_to 'Go to cocktails list !', cocktails_path, class: 'toggle-button' %>
+    <div class="homepage-content">
+      <h1 class="text-center titre-cocktail">Bienvenue sur Monsieur Cocktail !</h1>
+      <p class="text-center">Here, you will know everything about the best cocktails in the world...</p>
+    </div>
+    <div class="navbar-column">
+      <%= render 'search-bar', class: 'mb-3' %>
+      <%= render 'cocktail-list' %>
+    </div>
   </div>
 </div>

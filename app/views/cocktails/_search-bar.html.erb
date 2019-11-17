@@ -1,0 +1,10 @@
+<div class="search-bar align-items-center">
+  <%= form_tag cocktails_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a cocktail"
+    %>
+    <%= submit_tag "Search", class: "btn btn-warning" %>
+  <% end %>
+</div>

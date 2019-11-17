@@ -1,6 +1,7 @@
 
 <div class="banner">
   <div class="container">
+    <%= render 'navbar' %>
     <h1 class="text-center titre-cocktail"><em><strong><%= @cocktail.name.capitalize %></strong></em></h1>
     <div class="cards cocktail my-3">
       <div class="cocktail-infos">
@@ -90,7 +91,7 @@
           </div>
         </div>
       </div>
-      <%= link_to 'Back to cocktails', cocktails_path, class: 'toggle-button' %>
+    <%= link_to 'Back to cocktails', cocktails_path, class: 'toggle-button' %>
     </div>
   </div>
 </div>
