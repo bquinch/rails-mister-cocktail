@@ -54,8 +54,12 @@
   margin: auto;
 }
 
-.search-bar.align-items-center {
+.navbar-column .search-bar.align-items-center {
   margin-bottom: 1rem;
+}
+
+.search-bar.align-items-center {
+  margin-bottom: 0rem;
 }
 
 .search-bar {
